@@ -72,7 +72,7 @@ void quick_sort(int *array, size_t size)
 {
 	int i = 0;
 
-	if (array == NULL || !size)
+	if (!array || !size)
 		return;
 	quicksort(array, i, size - 1, size);
 }
