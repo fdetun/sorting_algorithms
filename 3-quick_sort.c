@@ -6,7 +6,6 @@
  *@b : int
  * Return: void
  */
-
 void swaparr(int *a, int *b)
 {
 int tmp = 0;
@@ -18,36 +17,38 @@ tmp = *b;
 
 /**
  * quicksort - recursion function of quick sort
- * array: unsorted array
- * low : int
- * high : int
- * size : size of array
- * return : void
+ *@array: unsorted array
+ *@low : int
+ *@high : int
+ *@size : size of array
+ * Return : void
  */
-void quicksort(int *array, int high, int low,size_t size)
+void quicksort(int *array, int high, int low, size_t size)
 {
 	int pivot;
+
 	if (high < low)
 	{
-		pivot =partition(array, high, low, size);
+		pivot = partition(array, high, low, size);
 		quicksort(array, high, pivot - 1, size);
 		quicksort(array, pivot + 1, low, size);
 	}
 }
 
 /**
- * partition - move elements smaller than pivot before it 
+ * partition - move elements smaller than pivot before it
  * and greater than pivot after it
- * array : unsorted array
- * low : int
- * high : int
- * size : size of array
- * Return : leftwall
+ *@array : unsorted array
+ *@low : int
+ *@high : int
+ *@size : size of array
+ * Return: leftwall
  */
-int partition(int *array, int high, int low,size_t size)
+int partition(int *array, int high, int low, size_t size)
 {
-	int pivot = array[low], leftwall = high -1 , i = 0;
-	for(i = high; i < low; i++)
+	int pivot = array[low], leftwall = high - 1, i = 0;
+
+	for (i = high; i < low; i++)
 		if (array[i] < pivot)
 		{
 			leftwall = leftwall + 1;
@@ -70,5 +71,8 @@ int partition(int *array, int high, int low,size_t size)
 void quick_sort(int *array, size_t size)
 {
 	int i = 0;
+
+	if (array == NULL)
+		return;
 	quicksort(array, i, size - 1, size);
 }
