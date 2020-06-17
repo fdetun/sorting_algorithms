@@ -23,7 +23,6 @@ void print_list(const listint_t *list);
 void print_array(const int *array, size_t size);
 void swaparr(int *a, int *b);
 void insertion_sort_list(listint_t **list);
-int minarr(int *array, size_t size);
 void selection_sort(int *array, size_t size);
 
 #endif
